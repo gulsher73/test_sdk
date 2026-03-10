@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TestFlutterSDK'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A simple Hello World Flutter SDK for iOS.'
   s.description      = <<-DESC
     TestSDK is a Flutter-based Hello World SDK.
@@ -17,7 +17,8 @@ Pod::Spec.new do |s|
   # GitHub Releases. Update this URL after each release.
   # ---------------------------------------------------------------------------
   s.source = {
-    :http => 'https://github.com/gulsher73/test_sdk/releases/download/1.0.0/TestSDK-1.0.0.zip'
+    :http   => 'https://github.com/gulsher73/test_sdk/releases/download/1.0.1/TestFlutterSDK-1.0.1.zip',
+    :sha256 => 'd689ff9ce956ee291bbe9f349f7433fe05f9e74f239d68fa244d226a7ab7f809'
   }
 
   s.ios.deployment_target = '12.0'
