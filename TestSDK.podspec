@@ -8,16 +8,16 @@ Pod::Spec.new do |s|
     can integrate via CocoaPods without needing Flutter installed.
   DESC
 
-  s.homepage         = 'https://github.com/YOURUSERNAME/test_sdk'
+  s.homepage         = 'https://github.com/gulsher73/test_sdk'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'AlfaPay' => 'dev@alfapay.com' }
+  s.author           = { 'AlfaPay' => 'gulsher@code-brew.com' }
 
   # ---------------------------------------------------------------------------
   # Source: a zip of the pre-built XCFrameworks + Swift wrapper hosted on
   # GitHub Releases. Update this URL after each release.
   # ---------------------------------------------------------------------------
   s.source = {
-    :http => 'https://github.com/YOURUSERNAME/test_sdk/releases/download/1.0.0/TestSDK-1.0.0.zip'
+    :http => 'https://github.com/gulsher73/test_sdk/releases/download/1.0.0/TestSDK-1.0.0.zip'
   }
 
   s.ios.deployment_target = '12.0'
