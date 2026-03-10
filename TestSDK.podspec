@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/gulsher73/test_sdk'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'AlfaPay' => 'gulsher@code-brew.com' }
+  s.author           = { 'Gulsher' => 'gulsher@code-brew.com' }
 
   # ---------------------------------------------------------------------------
   # Source: a zip of the pre-built XCFrameworks + Swift wrapper hosted on
