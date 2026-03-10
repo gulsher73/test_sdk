@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'TestSDK'
+  s.name             = 'AlfaPaySDK'
   s.version          = '1.0.0'
   s.summary          = 'A simple Hello World Flutter SDK for iOS.'
   s.description      = <<-DESC
