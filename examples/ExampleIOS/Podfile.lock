@@ -1,5 +1,5 @@
 PODS:
-  - TestFlutterSDK (1.0.0)
+  - TestFlutterSDK (1.0.1)
 
 DEPENDENCIES:
   - TestFlutterSDK (from `../../TestFlutterSDK.podspec`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :podspec: "../../TestFlutterSDK.podspec"
 
 SPEC CHECKSUMS:
-  TestFlutterSDK: a26625b608e82990f4be354996d831d7243f88c4
+  TestFlutterSDK: d25d33f2ddf26ddb913436dcb529b7c070e47c6b
 
 PODFILE CHECKSUM: ed5a1de30a51279470455edeba1bba4908852a4e
 
