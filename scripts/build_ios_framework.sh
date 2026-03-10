@@ -48,12 +48,11 @@ rm -rf "$BUILD_DIR" "$ZIP_STAGING"
 mkdir -p "$DIST_DIR"
 
 # --------------------------------------------------------------------------- #
-# 2. Build release XCFrameworks
+# 2. Build debug + release XCFrameworks
 # --------------------------------------------------------------------------- #
-echo "[2/6] Running flutter build ios-framework (release)..."
+echo "[2/6] Running flutter build ios-framework (debug + release)..."
 cd "$ROOT_DIR"
 flutter build ios-framework \
-  --release \
   --xcframework \
   --no-profile \
   --output="$BUILD_DIR"
@@ -62,15 +61,27 @@ echo "      Build output:"
 ls "$BUILD_DIR/Release/"
 
 # --------------------------------------------------------------------------- #
-# 3. Stage zip contents
+# 3. Stage zip contents — hybrid App.xcframework
+#    Simulator slice: Debug  (has kernel_blob.bin for JIT on simulator)
+#    Device slice:   Release (AOT compiled for production)
 # --------------------------------------------------------------------------- #
-echo "[3/6] Staging zip contents..."
+echo "[3/6] Staging zip contents (hybrid xcframework)..."
+HYBRID_DIR="$ROOT_DIR/build/hybrid_xcframeworks"
+rm -rf "$HYBRID_DIR"
+mkdir -p "$HYBRID_DIR/App.xcframework/ios-arm64"
+mkdir -p "$HYBRID_DIR/App.xcframework/ios-arm64_x86_64-simulator"
+
+cp -R "$BUILD_DIR/Release/App.xcframework/ios-arm64/"                     "$HYBRID_DIR/App.xcframework/ios-arm64/"
+cp -R "$BUILD_DIR/Debug/App.xcframework/ios-arm64_x86_64-simulator/"      "$HYBRID_DIR/App.xcframework/ios-arm64_x86_64-simulator/"
+cp    "$BUILD_DIR/Release/App.xcframework/Info.plist"                     "$HYBRID_DIR/App.xcframework/Info.plist"
+
 mkdir -p "$ZIP_STAGING/Frameworks"
 mkdir -p "$ZIP_STAGING/ios/Classes"
 
-# Copy XCFrameworks (release slice)
+# Hybrid App.xcframework (simulator=debug, device=release)
+cp -R "$HYBRID_DIR/App.xcframework"            "$ZIP_STAGING/Frameworks/"
+# Flutter engine — release is correct for both
 cp -R "$BUILD_DIR/Release/Flutter.xcframework" "$ZIP_STAGING/Frameworks/"
-cp -R "$BUILD_DIR/Release/App.xcframework"     "$ZIP_STAGING/Frameworks/"
 
 # Include FlutterPluginRegistrant if plugins are present
 if [ -d "$BUILD_DIR/Release/FlutterPluginRegistrant.xcframework" ]; then
