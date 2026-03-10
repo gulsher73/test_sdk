@@ -41,6 +41,12 @@ build/
 .ios/
 .flutter-plugins-dependencies
 
+# dist/ zips are large binaries — tracked by Git LFS, not ignored
+# (do NOT add dist/ here)
+
+# LFS sidecar checksum files are plain text — fine to commit
+# dist/*.sha256
+
 # Symbolication related
 app.*.symbols
 

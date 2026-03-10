@@ -1,0 +1,17 @@
+# Git LFS tracking for large binary files
+
+# Distribution zip (pre-built XCFrameworks)
+dist/*.zip filter=lfs diff=lfs merge=lfs -text
+
+# XCFramework binaries
+**/*.xcframework/**/*.framework/*       filter=lfs diff=lfs merge=lfs -text
+**/*.xcframework/**/*.framework/Flutter filter=lfs diff=lfs merge=lfs -text
+**/*.xcframework/**/*.framework/App     filter=lfs diff=lfs merge=lfs -text
+**/*.xcframework/**/dSYMs/**            filter=lfs diff=lfs merge=lfs -text
+**/*.xcframework/**/*.dat               filter=lfs diff=lfs merge=lfs -text
+
+# dSYM debug symbols
+**/*.dSYM/**/*.dSYM filter=lfs diff=lfs merge=lfs -text
+
+# AAR (Android, future)
+dist/*.aar filter=lfs diff=lfs merge=lfs -text
