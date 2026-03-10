@@ -1,0 +1,16 @@
+PODS:
+  - TestFlutterSDK (1.0.0)
+
+DEPENDENCIES:
+  - TestFlutterSDK (from `../../TestFlutterSDK.podspec`)
+
+EXTERNAL SOURCES:
+  TestFlutterSDK:
+    :podspec: "../../TestFlutterSDK.podspec"
+
+SPEC CHECKSUMS:
+  TestFlutterSDK: a26625b608e82990f4be354996d831d7243f88c4
+
+PODFILE CHECKSUM: ed5a1de30a51279470455edeba1bba4908852a4e
+
+COCOAPODS: 1.16.2
